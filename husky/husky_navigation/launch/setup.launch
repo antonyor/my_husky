@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+	<node name="remapscan" pkg="remapscan" type="remapscan.py" />
+	<node name="base2laser" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 base_link laser 100" />
+	<include file="$(find husky_navigation)/launch/exploration_demo.launch" />
+</launch>
+

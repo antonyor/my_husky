@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+	<include file=”$(find husky_base)/launch/base.launch” />
+	<node name=”hokuyoscan” pkg=”hokuyo_node” type=”hokuyo_node” />
+	<node name=”remapscan” pkg=”remapscan” type=”remapscan.py” />
+	<node name="odom2base" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 odom base_link 100" />
+	<node name="base2laser" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 base_link laser 100" />
+</launch>
+
