@@ -1,5 +1,5 @@
 # my_husky
-Install on new laptop:
+Install on new laptop: 
 Make sure you have ros installed correctly and have created a catkin workspace
 In src
 $ git clone https://github.com/antonyor/my_husky
