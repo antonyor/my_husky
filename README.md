@@ -1,8 +1,8 @@
 # my_husky  
 ## Install on new laptop:   
 Make sure you have ros installed correctly and have created a catkin workspace  
-In src
-'''
+In the src directory under your workspace  
+~~~
 $ git clone https://github.com/antonyor/my_husky  
 $ cd my_husky  
 $ mv * ..  
@@ -10,15 +10,15 @@ $ rm -r my_husky
 $ sudo apt install ros-noetic-husky-navigation  
 $ sudo apt install ros-noetic-husky-gazebo  
 $ sudo apt install ros noetic-husky-viz  
-'''
+~~~
   
 ## ROS setup on the raspberrypi:  
 Make sure you have ros installed correctly and have created a catkin workspace  
-in src
-'''
+In the src directory under your workspace 
+~~~
 $ git clone https://github.com/husky/husky  
 $ git clone https://github.com/husky/husky_robot 
-'''
+~~~
 Follow the tutorial to install the hokuyo node: http://wiki.ros.org/hokuyo_node/Tutorials/UsingTheHokuyoNode   
 
 ## ROS network setup
@@ -26,23 +26,23 @@ The network and environment variables are configured to my hotspot.
 If you’re using a different hotspot you’ll need to connect the raspberry pi wifi to it.  
 On the raspberry pi use a text editor to edit the ~/.bashrc file and add these lines to the end  
 
-'''
+~~~
 $ vim ~/.bashrc  
 
 export ROS_MASTER_URI=http://x.x.x.x:11311  
 export ROS_IP=y.y.y.y    
-'''
+~~~
 where x.x.x.x is the ip address of the device running roscore  
 And y.y.y.y is the ip address of the raspberry pi  
   
 On the computer do the same  
 
-'''
+~~~
 $ vim ~/.bashrc  
   
 export ROS_MASTER_URI=http://x.x.x.x:11311  
 export ROS_IP=z.z.z.z  
-'''
+~~~
 where z.z.z.z is the ip address of the computer and x.x.x.x is the same ip address of line added in the pi’s bashrc script.  
 
 It does not matter which device is running roscore. Just ensure that it matches the ip of the ROS_MASTER_URI variable and that the ROS_IP variables are set to each respective device’s ip. Also make sure you run roscore on the proper device before you start anything else  
@@ -55,7 +55,7 @@ It does not matter which device is running roscore. Just ensure that it matches 
    * $ ssh guest@172.20.10.11  
    * Password: guest  
 5. On the pi run:  
-`* $ roslaunch husky_base startup.launch   
+   * $ roslaunch husky_base startup.launch   
 6. On the computer:
    * For joystick control:   
       * $ roslaunch husky_control teleop.launch  
